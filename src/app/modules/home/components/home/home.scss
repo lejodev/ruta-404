@@ -1,26 +1,68 @@
 .banner {
-    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    padding: 10px;
     box-sizing: border-box;
+    height: 100vh;
 
-    .hero-image {
-        position: relative;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../../../../../../public/images/banner.JPG');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .banner-text {
         width: 100%;
-        padding-bottom: 56.25%;
-        height: 0;
-        text-align: center;
-        background: url('../../../../../../public/images/banner.JPG');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        max-width: 900px;
+    }
 
-        .hero-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+    .shouted-phrase {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 10px;
 
-            &-inner {}
+        span {
+            display: inline-block;
+            position: relative;
+            padding: 0 5px;
+
+            color: #F8F8FF;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -5px;
+                right: -5px;
+                height: 3px;
+                transform: translateY(-50%);
+
+                background-color: #E81D1D;
+                z-index: 5;
+            }
+        }
+    }
+
+    .irreverent-phrase {
+        font-size: clamp(1.5rem, 6vw, 2.8rem);
+        font-family: 'Arial Black', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 1.2;
+
+        span {
+            display: inline-block;
+            transform: skewX(-4deg);
+            color: white;
+            -webkit-background-clip: text;
         }
     }
 }
