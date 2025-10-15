@@ -1,0 +1,53 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(27, 27, 27);
+    padding: 1rem;
+    box-sizing: border-box;
+    color: white;
+
+    .navigation-container {
+        width: 100%;
+
+        .inner-navigation {
+
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            .logo {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            .nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 1rem 0 1rem 0;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .socials {
+            height: 30px;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
