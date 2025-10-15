@@ -10,35 +10,65 @@
             </h1>
         </div>
     </div>
-    <div class="about p-8 bg-gray-50 dark:bg-gray-800">
-        <mat-card class="text-card max-w-4xl mx-auto p-6 md:p-10 rounded-xl shadow-2xl">
-            <h2 class="paragraph-title">
-                ¿Quién soy?
-            </h2>
+    <div class="about">
+        <mat-card class="about-card">
+            <div class="text-card ">
+                <h2 class="paragraph-title">
+                    ¿Quién soy?
+                </h2>
 
-            <blockquote class="about-me-paragraph text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                <p>
-                    Soy Alejandro Rincón, programador, apasionado por los viajes en moto y por los autos clásicos.
-                    Actualmente estoy
-                    recorriendo inicialmente pueblos colombianos en mi moto (X Pulse 200 4V). Mi plan es conocer los
-                    pueblos
-                    más icónicos del país y de Sudamérica.
+                <blockquote class="about-me-paragraph text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    <p>
+                        Soy Alejandro Rincón, programador, apasionado por los viajes en moto y por los autos clásicos.
+                        Ruta404 no es un error de página, es el hecho de no encontrar un camino para andar en moto, es
+                        andar
+                        sin destino planeado y llegar a lugares que no teníamos ni idea que existían.
+                        Actualmente estoy
+                        recorriendo pueblos colombianos en mi moto (X Pulse 200 4V). Mi plan es conocer los
+                        pueblos
+                        más icónicos del país y de Sudamérica.
 
-                    <em class="text-sm italic text-gray-500 dark:text-gray-400">
-                        (Europa también, pero no le digan a nadie).
-                    </em>
-                </p>
-                <a href="https://www.youtube.com/@Ruta404adv?sub_confirmation=1" target="_blank"
-                    matButton="elevated">Suscríbete</a>
-            </blockquote>
-        </mat-card>
-        <mat-card class="images-container">
-            <!-- // Here it will be placed a corousel -->
-            <div class="image">
-
+                        <em class="text-sm italic text-gray-500 dark:text-gray-400">
+                            (Europa también, pero no le digan a nadie).
+                        </em>
+                    </p>
+                    <a href="https://www.youtube.com/@Ruta404adv?sub_confirmation=1" target="_blank"
+                        matButton="elevated">Suscríbete</a>
+                </blockquote>
             </div>
+            <div class="images-container">
+                <!-- // Here it will be placed a corousel -->
+                <div class="image">
+
+                </div>
+            </div>
+
+        </mat-card>
+
+    </div>
+    <div class="socials">
+        <mat-card class="socials-CTA">
+
+            <div class="social-content">
+                <h2>Sigue mis aventuras en YouTube</h2>
+
+                <p class="paragraph-text">
+                    Sigue mis rutas en YouTube y las demás redes, si desea armar parche y que salgamos a tomar café o
+                    chocolate, ¡es no más que diga, en serio!
+                </p>
+
+                <a href="https://www.youtube.com/@Ruta404adv?sub_confirmation=1" class="social-yt-button"
+                    matButton="elevated">
+                    Sígueme en YouTube
+                </a>
+            </div>
+
+            <div class="social-photo">
+            </div>
+
         </mat-card>
     </div>
-    <div class="timeline future"></div>
-    <div class="contact future"></div>
+    <div>
+        <app-routes-timeline></app-routes-timeline>
+    </div>
 </div>

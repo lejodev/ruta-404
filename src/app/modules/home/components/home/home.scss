@@ -56,7 +56,6 @@
                 right: -5px;
                 height: 3px;
                 transform: translateY(-50%);
-
                 background-color: #E81D1D;
                 z-index: 5;
             }
@@ -74,7 +73,6 @@
             display: inline-block;
             transform: skewX(-4deg);
             color: white;
-            -webkit-background-clip: text;
         }
     }
 
@@ -84,54 +82,70 @@
 
 .about {
     display: flex;
-    flex-flow: column;
-    padding: 1em;
-    background-color: #012;
-    gap: 1em;
+    background: linear-gradient(#012, rgb(0, 14, 29));
+    padding: 3rem;
 
-    .text-card {
+    .about-card {
+        display: flex;
+        flex-flow: row;
         padding: 1em;
+        gap: 1em;
 
-        .about-me-paragraph {
-            .text-sm {
-                font-weight: bold;
+        .text-card {
+            padding: 1em;
+            gap: 1rem;
+            width: 50%;
+            // padding: 1rem 2rem 1rem 2rem;
+
+            .about-me-paragraph {
+                p {
+                    padding-bottom: 1rem;
+                    margin: 4rem 0;
+                }
+
+                .text-sm {
+                    font-weight: bold;
+                }
             }
         }
-    }
 
-    .images-container {
-        height: 40vh;
-        overflow: hidden;
-
-        .image {
-            height: 100%;
-            width: 100%;
-            background: url('../../../../../../public/images/crsl-1-lake.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .images-container {
+            // height: 40vh;
             overflow: hidden;
+            width: 50%;
 
-            &:hover {
-                transform: scale(1.01);
+            .image {
+                height: 100%;
+                width: 100%;
+                background: url('../../../../../../public/images/crsl-1-lake.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                overflow: hidden;
+
+                &:hover {
+                    transform: scale(1.01);
+                }
             }
         }
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
     .about {
-        flex-flow: row;
+        .about-card {
+            flex-flow: column;
 
-        .text-card {
-            width: 50%;
-            justify-content: center;
-        }
+            .text-card {
+                width: 100%;
+                justify-content: center;
+            }
 
-        .images-container {
-            width: 50%;
-            height: 55vh;
+            .images-container {
+                width: 100%;
+                height: 55vh;
+            }
         }
     }
 
@@ -139,13 +153,117 @@
 }
 
 .future {
-    height: 100vh;
+    min-height: 100vh;
 }
 
-.timeline {
-    background-color: rgb(34, 0, 0)
-}
+/* SCSS for the Socials CTA Card */
 
-.contact {
-    background-color: rgb(0, 34, 25);
+.socials {
+    background: linear-gradient(rgb(0, 14, 29), rgb(0, 12, 26));
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .socials-CTA {
+        display: flex;
+        /* Enable Flexbox for horizontal layout */
+        flex-direction: row;
+        /* Ensure text and photo are side-by-side */
+        gap: 2rem;
+        /* Space between text and photo sections */
+        padding: 2.5rem;
+        /* Ample padding inside the card */
+        // margin: 2rem auto;
+        /* Center the card and add vertical space */
+        max-width: 1000px;
+        /* Limit the width for readability */
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        /* Soft, noticeable shadow */
+        /* Blue/Dark gradient background */
+        color: #ffffff;
+        /* White text for contrast */
+        overflow: hidden;
+        background-color: transparent;
+        /* Important for border-radius on the children */
+
+        /* The Text/Content Area */
+        .social-content {
+            flex: 3;
+            /* Allocate more space for the text (e.g., 60% of width) */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Vertically center content */
+
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+                color: #ffc107;
+                /* Accent color for the title */
+            }
+
+            .paragraph-social {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                opacity: 0.9;
+            }
+
+            /* The YouTube Button */
+            .social-yt-button {
+                // matButton="elevated" styles
+                align-self: flex-start;
+                /* Aligns the button to the start of the column */
+                text-decoration: none;
+                padding: 0.8rem 1.5rem;
+                font-weight: bold;
+                font-size: 1rem;
+                border-radius: 8px;
+                background-color: #ff0000;
+                /* YouTube Red */
+                color: white;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+
+                &:hover {
+                    background-color: #e60000;
+                    /* Darker red on hover */
+                    transform: translateY(-2px);
+                    /* Slight lift effect */
+                }
+            }
+        }
+
+        /* The Photo/Visual Area */
+        .social-photo {
+            flex: 2;
+            /* Allocate less space for the photo (e.g., 40% of width) */
+            min-height: 250px;
+            /* Ensure a minimum height if no content is inside */
+            border-radius: 8px;
+            background-color: #3282b8;
+            /* Placeholder color */
+
+            // **IMPORTANT:** Replace this with your actual image or background image
+            // Example for a background image:
+            // background-image: url('path/to/your/adventure-photo.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 768px) {
+            flex-direction: column;
+            /* Stack vertically on small screens */
+            padding: 1.5rem;
+
+            .social-photo {
+                order: -1;
+                /* Move photo to the top of the stack */
+                margin-bottom: 1rem;
+                min-height: 180px;
+            }
+        }
+    }
 }
