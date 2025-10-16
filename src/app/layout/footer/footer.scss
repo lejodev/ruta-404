@@ -1,53 +1,139 @@
 .footer {
+    // 1. IMPROVEMENT: Use CSS variables for colors and spacing
+    --color-bg-dark: rgb(27, 27, 27);
+    --color-text-light: white;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+
     width: 100%;
     display: flex;
     flex-flow: column;
-    background-color: rgb(27, 27, 27);
-    padding: 1rem;
+    background-color: var(--color-bg-dark);
+    padding: var(--spacing-lg) var(--spacing-md); // More padding for visual comfort
     box-sizing: border-box;
-    color: white;
+    color: var(--color-text-light);
+    
+    // 2. IMPROVEMENT: Use a max-width container for content centering
+    .content-wrapper {
+        width: 100%;
+        max-width: 1200px; 
+        margin: 0 auto; // Center the content on large screens
+        display: flex;
+        flex-flow: column; // Default is column (Mobile)
+        gap: var(--spacing-lg); // General spacing between main sections
+    }
 
+    // Mobile Default (Column Layout)
     .navigation-container {
         width: 100%;
 
         .inner-navigation {
-
             display: flex;
             flex-flow: column;
             align-items: center;
+            gap: var(--spacing-md);
 
             .logo {
-                font-size: 1.5em;
-                font-weight: bold;
+                font-size: 1.6em;
+                font-weight: 700; // Use numeric font-weight
+                margin-bottom: var(--spacing-md);
             }
 
             .nav {
                 display: flex;
-                flex-direction: column;
+                flex-direction: column; // Default: Vertical nav list
                 align-items: center;
-                gap: 0.5rem;
-                padding: 1rem 0 1rem 0;
-
+                gap: var(--spacing-sm);
+                padding: var(--spacing-md) 0;
+                
+                // 3. IMPROVEMENT: Add divider line (optional, but visually separates)
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+                width: 100%;
+                
                 a {
-                    color: white;
+                    color: var(--color-text-light);
                     text-decoration: none;
+                    padding: 0.2rem 0;
+                    transition: color 0.2s ease;
+                    &:hover {
+                        color: #4A8FE1; // Highlight color on hover
+                    }
                 }
             }
         }
-
+        
         .socials {
-            height: 30px;
+            // NOTE: 'height: 30px;' is usually handled by content size or padding, 
+            // but kept here if it strictly refers to the container's height.
+            height: 30px; 
+            display: flex;
+            justify-content: center; // Center icons horizontally
+            align-items: center; // Center icons vertically
+            gap: 1.5rem; // Space between social links
+            margin-top: var(--spacing-md);
 
             a {
-                color: white;
+                color: var(--color-text-light);
+                transition: color 0.2s ease;
+                font-size: 1.25rem; // Add icon size
+                &:hover {
+                    color: #4A8FE1; // Highlight color on hover
+                }
             }
         }
     }
-
+    
     .info {
+        // 4. SIMPLIFICATION: .info styles already look centered, kept simple.
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
+        padding-top: var(--spacing-lg); // Spacing from content above
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    // Desktop/Tablet Layout: @media (min-width: 768px)
+    @media (min-width: 768px) {
+        
+        .content-wrapper {
+            flex-flow: row; // Change primary flow to horizontal
+            justify-content: space-between; // Space out the main sections
+            align-items: flex-start; // Align sections to the top
+            gap: 2rem;
+            
+        }
+
+        .navigation-container {
+            display: flex;
+            flex-flow: row; // Arrange navigation components horizontally
+            flex: 2; // Give navigation more space
+            justify-content: flex-start; // Align content left
+            
+            .inner-navigation {
+                align-items: flex-start; // Left-align elements
+                
+                .nav {
+                    flex-direction: row; // Navigation links side-by-side
+                    border-bottom: none; // Remove border divider
+                    padding: 0;
+                    gap: var(--spacing-lg); // Increase spacing between horizontal links
+                }
+            }
+
+            .socials {
+                margin-top: 0; // Reset margin
+                padding-left: 2rem; // Optional: Separate socials visually
+            }
+        }
+        
+        .info {
+            flex: 1; // Give info section dedicated space
+            align-items: flex-end; // Right-align info block
+            padding-top: 0; // Remove top padding
+            text-align: right;
+        }
     }
 }
