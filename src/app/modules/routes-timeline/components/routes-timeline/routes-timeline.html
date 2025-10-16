@@ -18,7 +18,10 @@
                 </mat-card>
 
                 <mat-card class="gallery">
-                    Galería: {{route.photos ? route.photos.length + ' Fotos' : 'Sin fotos'}}
+                    @for(photo of route.photos; track photo.id){
+                        <img class="photo" [src]="'../../../../../..//public/images/' + photo.url" alt="">
+                    }
+                    <!-- Galería: {{route.photos ? route.photos.length + ' Fotos' : 'Sin fotos'}} -->
                 </mat-card>
             </div>
         </div>

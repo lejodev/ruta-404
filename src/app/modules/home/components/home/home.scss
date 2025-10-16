@@ -166,6 +166,7 @@
     .socials-CTA {
         display: flex;
         flex-direction: column;
+        min-height: 60vh;
         gap: 2rem;
         padding: 2.5rem;
         max-width: 1000px;
@@ -223,15 +224,23 @@
             background-position: center;
         }
 
-        // @media (max-width: 768px) {
-        //     flex-direction: column;
-        //     padding: 1.5rem;
 
-        //     .social-photo {
-        //         order: -1;
-        //         margin-bottom: 1rem;
-        //         min-height: 180px;
-        //     }
-        // }
+    }
+
+    @media (min-width: 768px) {
+        .socials-CTA {
+
+            flex-direction: row;
+            padding: 1.5rem;
+            .social-content {
+                width: 50%;
+            }
+
+            .social-photo {
+                order: -1;
+                margin-bottom: 1rem;
+                min-height: 180px;
+            }
+        }
     }
 }
