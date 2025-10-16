@@ -83,19 +83,17 @@
 .about {
     display: flex;
     background: linear-gradient(#012, rgb(0, 14, 29));
-    padding: 3rem;
+    padding: 2.5rem;
 
     .about-card {
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         padding: 1em;
         gap: 1em;
 
         .text-card {
             padding: 1em;
             gap: 1rem;
-            width: 50%;
-            // padding: 1rem 2rem 1rem 2rem;
 
             .about-me-paragraph {
                 p {
@@ -110,9 +108,10 @@
         }
 
         .images-container {
-            // height: 40vh;
+
+            flex: 2;
+            min-height: 250px;
             overflow: hidden;
-            width: 50%;
 
             .image {
                 height: 100%;
@@ -129,21 +128,20 @@
             }
         }
     }
-}
 
-@media (max-width: 768px) {
+    @media (min-width: 768px) {
 
-    .about {
         .about-card {
-            flex-flow: column;
+            flex-flow: row;
 
             .text-card {
-                width: 100%;
+                width: 50%;
                 justify-content: center;
             }
 
             .images-container {
-                width: 100%;
+                flex: 1;
+                width: 50%;
                 height: 55vh;
             }
         }
@@ -152,11 +150,11 @@
 
 }
 
+
 .future {
     min-height: 100vh;
 }
 
-/* SCSS for the Socials CTA Card */
 
 .socials {
     background: linear-gradient(rgb(0, 14, 29), rgb(0, 12, 26));
@@ -167,41 +165,28 @@
 
     .socials-CTA {
         display: flex;
-        /* Enable Flexbox for horizontal layout */
-        flex-direction: row;
-        /* Ensure text and photo are side-by-side */
+        flex-direction: column;
         gap: 2rem;
-        /* Space between text and photo sections */
         padding: 2.5rem;
-        /* Ample padding inside the card */
-        // margin: 2rem auto;
-        /* Center the card and add vertical space */
         max-width: 1000px;
-        /* Limit the width for readability */
         border-radius: 12px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        /* Soft, noticeable shadow */
-        /* Blue/Dark gradient background */
         color: #ffffff;
-        /* White text for contrast */
         overflow: hidden;
         background-color: transparent;
-        /* Important for border-radius on the children */
 
-        /* The Text/Content Area */
         .social-content {
             flex: 3;
-            /* Allocate more space for the text (e.g., 60% of width) */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* Vertically center content */
+            gap: 1rem;
 
             h2 {
                 font-size: 2.2rem;
                 margin-bottom: 1rem;
                 color: #ffc107;
-                /* Accent color for the title */
+                line-height: 2rem;
             }
 
             .paragraph-social {
@@ -211,59 +196,42 @@
                 opacity: 0.9;
             }
 
-            /* The YouTube Button */
             .social-yt-button {
-                // matButton="elevated" styles
                 align-self: flex-start;
-                /* Aligns the button to the start of the column */
                 text-decoration: none;
                 padding: 0.8rem 1.5rem;
                 font-weight: bold;
                 font-size: 1rem;
                 border-radius: 8px;
                 background-color: #ff0000;
-                /* YouTube Red */
                 color: white;
                 transition: background-color 0.3s ease, transform 0.2s ease;
 
                 &:hover {
                     background-color: #e60000;
-                    /* Darker red on hover */
                     transform: translateY(-2px);
-                    /* Slight lift effect */
                 }
             }
         }
 
-        /* The Photo/Visual Area */
         .social-photo {
             flex: 2;
-            /* Allocate less space for the photo (e.g., 40% of width) */
             min-height: 250px;
-            /* Ensure a minimum height if no content is inside */
             border-radius: 8px;
-            background-color: #3282b8;
-            /* Placeholder color */
-
-            // **IMPORTANT:** Replace this with your actual image or background image
-            // Example for a background image:
-            // background-image: url('path/to/your/adventure-photo.jpg');
+            background-image: url('../../../../../../public/images/gal-\ \(2\).jpg');
             background-size: cover;
             background-position: center;
         }
 
-        /* Responsive adjustment for smaller screens */
-        @media (max-width: 768px) {
-            flex-direction: column;
-            /* Stack vertically on small screens */
-            padding: 1.5rem;
+        // @media (max-width: 768px) {
+        //     flex-direction: column;
+        //     padding: 1.5rem;
 
-            .social-photo {
-                order: -1;
-                /* Move photo to the top of the stack */
-                margin-bottom: 1rem;
-                min-height: 180px;
-            }
-        }
+        //     .social-photo {
+        //         order: -1;
+        //         margin-bottom: 1rem;
+        //         min-height: 180px;
+        //     }
+        // }
     }
 }

@@ -1,28 +1,26 @@
-/* A more robust timeline structure using relative positioning on the main container */
-
 .timeline-container {
     display: flex;
     flex-flow: column;
     align-items: center;
     background: linear-gradient(rgb(0, 12, 26), rgb(0, 11, 24));
-    color: #F8F9FA; // Light text for contrast
-    padding: 2rem 0; // Add some vertical padding
+    color: #F8F9FA;
+    padding: 2rem 0;
 
     .timeline {
-        position: relative; // Crucial: sets the context for the absolute line
+        position: relative;
         background-color: transparent;
-        width: 80vw; // Use a slightly larger width for better content display
-        max-width: 1000px; // Cap the max width
+        width: 80vw;
+        max-width: 1000px;
 
-        // The vertical timeline line
+
         &::before {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 10px; // Position it slightly from the left edge of the 'timeline' card
+            left: 10px;
             width: 4px;
-            background-color: #4A8FE1; // A vibrant blue for the line
+            background-color: #4A8FE1;
             z-index: 1;
             border-radius: 2px;
         }
@@ -30,31 +28,30 @@
         h1 {
             padding-left: 2rem;
             margin-bottom: 1.5rem;
-            color: #C3E0FF; // Slightly lighter blue for the heading
+            color: #C3E0FF;
         }
 
         .ride {
-            position: relative; // Needed to position the dot relative to the ride
-            padding: 1.5rem 0 1.5rem 2rem; // Padding on the left pushes content past the line
-            margin-left: 1rem; // Adjust margin to align with the line
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1); // Subtle separator
+            position: relative;
+            padding: 1.5rem 0 1.5rem 2rem;
+            margin-left: 1rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 
             &:last-child {
-                border-bottom: none; // Remove the border on the last item
+                border-bottom: none;
             }
 
-            // The dot for each timeline item
             &::before {
                 content: '';
                 position: absolute;
-                top: 2rem; // Center the dot vertically with the content
-                left: -10px; // Pull it left to sit on the main timeline line (10px from edge + 1rem margin-left)
+                top: 2rem;
+                left: -10px;
                 width: 16px;
                 height: 16px;
-                background-color: #FF5722; // A contrasting color for the dot
-                border: 3px solid #012; // Border to cover the main line and give depth
+                background-color: #FF5722;
+                // border: 3px solid #012;
                 border-radius: 50%;
-                z-index: 2; // Keep it above the main line
+                z-index: 2;
             }
 
             h2 {
@@ -66,12 +63,13 @@
 
             .ride-details {
                 display: flex;
-                gap: 1rem; // Space between text details and gallery
+                flex-flow: column;
+                gap: 1rem;
 
                 .text-details {
                     flex: 1;
                     padding: 1rem;
-                    background-color: rgba(255, 255, 255, 0.05); // Subtle background for details
+                    background-color: rgba(255, 255, 255, 0.05);
                     border-radius: 6px;
                     display: flex;
                     flex-direction: column;
@@ -82,10 +80,10 @@
 
                         &.detail-destination {
                             font-weight: bold;
-                            color: #FFC107; // Highlight destination
+                            color: #FFC107;
                         }
 
-                        // Style for the in-progress status (if applicable)
+
                         &.detail-in-progrss {
                             color: #FF5722;
                             font-style: italic;
@@ -98,7 +96,7 @@
                 }
 
                 .gallery {
-                    width: 250px; // Fixed width for gallery preview
+                    width: 250px;
                     background-color: #333;
                     border-radius: 6px;
                     display: flex;

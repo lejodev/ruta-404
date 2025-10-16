@@ -1,33 +1,33 @@
 <div class="timeline-container">
+    <h1>Mi Historial de Rutas</h1>
     <mat-card class="timeline">
-        <h1>Mi Historial de Rutas</h1>
 
         @for (route of routesHistory; track route.id) {
-            <div class="ride">
-                <h2>{{route.name}}</h2>
-                
-                <div class="ride-details">
-                    <mat-card class="text-details">
-                        <span class="detail-destination">Destino: {{route.destination}}</span>
-                        
-                        <span [class.detail-in-progrss]="route.in_progress">
-                            Estado: {{ route.in_progress ? 'En progreso' : 'Completado' }}
-                        </span>
-                        
-                        <span class="detail-distance">Distancia: {{route.distance}} km</span>
-                    </mat-card>
+        <div class="ride">
+            <h2>{{route.name}}</h2>
 
-                    <mat-card class="gallery">
-                        Galería: {{route.photos ? route.photos.length + ' Fotos' : 'Sin fotos'}}
-                    </mat-card>
-                </div>
+            <div class="ride-details">
+                <mat-card class="text-details">
+                    <span class="detail-destination">Destino: {{route.destination}}</span>
+
+                    <span [class.detail-in-progrss]="route.in_progress">
+                        Estado: {{ route.in_progress ? 'En progreso' : 'Completado' }}
+                    </span>
+
+                    <span class="detail-distance">Distancia: {{route.distance}} km</span>
+                </mat-card>
+
+                <mat-card class="gallery">
+                    Galería: {{route.photos ? route.photos.length + ' Fotos' : 'Sin fotos'}}
+                </mat-card>
             </div>
+        </div>
         }
 
         @empty {
-            <mat-card>
-                No hay rutas en este momento.
-            </mat-card>
+        <mat-card>
+            No hay rutas en este momento.
+        </mat-card>
         }
     </mat-card>
 </div>
