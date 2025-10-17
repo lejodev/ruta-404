@@ -3,16 +3,17 @@
         <div class="inner-navigation">
             <div class="logo">RUTA404</div>
             <nav class="nav">
-                <a href="" class="mist-rutas">Mis rutas</a>
-                <a href="" class="contact">Contacto</a>
-                <a href="" class="home">Inicio</a>
+                <a class="mist-rutas" (click)="scrollTo('timeline')">Mis rutas</a>
+                <a class="contact" (click)="scrollTo('about')">Acerca de mi </a>
+                <a class="home" (click)="scrollTo('home')">Inicio</a>
             </nav>
         </div>
         <div class="socials">
-            <a href="https://www.instagram.com/ruta_404/" target="_blank" fontIcon="instagram">
-                <mat-icon aria-hidden="false" aria-label="Example instagram icon" fontIcon="instagram"></mat-icon>
+            <a href="https://www.instagram.com/ruta_404/" target="_blank" aria-label="Instagram">
+                <mat-icon>instagram</mat-icon>
             </a>
-            <a href="[Your Social Link]" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/alejandro-rincon-vera-4810b615a/" target="_blank"
+                aria-label="LinkedIn">
                 <mat-icon fontIcon="linkedin"></mat-icon>
             </a>
 

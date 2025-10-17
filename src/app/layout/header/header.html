@@ -1,15 +1,16 @@
 <mat-toolbar color="primary" class="header">
     <div class="navigation-container">
-        <span class="logo">RUTA 404</span>
+        <span class="logo" (click)="scrollTo('home')">RUTA 404</span>
 
-        <!-- <nav>
-            <a mat-button routerLink="/rutas">
+        <nav>
+            <a mat-button (click)="scrollTo('timeline')">
                 <span>Mis rutas</span>
             </a>
-            
-            <a mat-button routerLink="/contacto">
-                <span>Contacto</span>
+
+            <a mat-button (click)="scrollTo('about')">
+                <span>Quien Soy</span>
             </a>
-        </nav> -->
+        </nav>
+        
     </div>
 </mat-toolbar>

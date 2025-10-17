@@ -1,139 +1,149 @@
 .footer {
-    // 1. IMPROVEMENT: Use CSS variables for colors and spacing
-    --color-bg-dark: rgb(27, 27, 27);
-    --color-text-light: white;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
+  width: 100%;
+  background: linear-gradient(to bottom, #000c1a, #000b18);
+  color: #f8f9fa;
+  padding: 2.5rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 
+  .navigation-container {
     width: 100%;
+    max-width: 1000px;
     display: flex;
-    flex-flow: column;
-    background-color: var(--color-bg-dark);
-    padding: var(--spacing-lg) var(--spacing-md); // More padding for visual comfort
-    box-sizing: border-box;
-    color: var(--color-text-light);
-    
-    // 2. IMPROVEMENT: Use a max-width container for content centering
-    .content-wrapper {
-        width: 100%;
-        max-width: 1200px; 
-        margin: 0 auto; // Center the content on large screens
-        display: flex;
-        flex-flow: column; // Default is column (Mobile)
-        gap: var(--spacing-lg); // General spacing between main sections
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (min-width: 700px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    // Mobile Default (Column Layout)
-    .navigation-container {
-        width: 100%;
+    .inner-navigation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
 
-        .inner-navigation {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            gap: var(--spacing-md);
+      @media (min-width: 700px) {
+        flex-direction: row;
+        gap: 2rem;
+      }
 
-            .logo {
-                font-size: 1.6em;
-                font-weight: 700; // Use numeric font-weight
-                margin-bottom: var(--spacing-md);
-            }
+      .logo {
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #4a8fe1;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
 
-            .nav {
-                display: flex;
-                flex-direction: column; // Default: Vertical nav list
-                align-items: center;
-                gap: var(--spacing-sm);
-                padding: var(--spacing-md) 0;
-                
-                // 3. IMPROVEMENT: Add divider line (optional, but visually separates)
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-                width: 100%;
-                
-                a {
-                    color: var(--color-text-light);
-                    text-decoration: none;
-                    padding: 0.2rem 0;
-                    transition: color 0.2s ease;
-                    &:hover {
-                        color: #4A8FE1; // Highlight color on hover
-                    }
-                }
-            }
+        &:hover {
+          color: #6cb1ff;
         }
-        
-        .socials {
-            // NOTE: 'height: 30px;' is usually handled by content size or padding, 
-            // but kept here if it strictly refers to the container's height.
-            height: 30px; 
-            display: flex;
-            justify-content: center; // Center icons horizontally
-            align-items: center; // Center icons vertically
-            gap: 1.5rem; // Space between social links
-            margin-top: var(--spacing-md);
+      }
 
-            a {
-                color: var(--color-text-light);
-                transition: color 0.2s ease;
-                font-size: 1.25rem; // Add icon size
-                &:hover {
-                    color: #4A8FE1; // Highlight color on hover
-                }
-            }
-        }
-    }
-    
-    .info {
-        // 4. SIMPLIFICATION: .info styles already look centered, kept simple.
+      .nav {
         display: flex;
-        flex-flow: column;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        padding-top: var(--spacing-lg); // Spacing from content above
-        font-size: 0.9rem;
-        opacity: 0.8;
+        gap: 0.75rem;
+
+        @media (min-width: 700px) {
+          flex-direction: row;
+          gap: 2rem;
+        }
+
+        a {
+          color: #b0d4ff;
+          font-size: 0.95rem;
+          font-weight: 500;
+          text-decoration: none;
+          position: relative;
+          transition: color 0.3s ease, transform 0.3s ease;
+
+          &:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 1px;
+            background: #4a8fe1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
 
-    // Desktop/Tablet Layout: @media (min-width: 768px)
-    @media (min-width: 768px) {
-        
-        .content-wrapper {
-            flex-flow: row; // Change primary flow to horizontal
-            justify-content: space-between; // Space out the main sections
-            align-items: flex-start; // Align sections to the top
-            gap: 2rem;
-            
+    .socials {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #4a8fe1;
+          transform: translateY(-3px);
         }
 
-        .navigation-container {
-            display: flex;
-            flex-flow: row; // Arrange navigation components horizontally
-            flex: 2; // Give navigation more space
-            justify-content: flex-start; // Align content left
-            
-            .inner-navigation {
-                align-items: flex-start; // Left-align elements
-                
-                .nav {
-                    flex-direction: row; // Navigation links side-by-side
-                    border-bottom: none; // Remove border divider
-                    padding: 0;
-                    gap: var(--spacing-lg); // Increase spacing between horizontal links
-                }
-            }
-
-            .socials {
-                margin-top: 0; // Reset margin
-                padding-left: 2rem; // Optional: Separate socials visually
-            }
+        mat-icon {
+          color: #b0d4ff;
+          font-size: 20px;
         }
-        
-        .info {
-            flex: 1; // Give info section dedicated space
-            align-items: flex-end; // Right-align info block
-            padding-top: 0; // Remove top padding
-            text-align: right;
-        }
+      }
     }
+  }
+
+  .info {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #9ab7d6;
+    text-align: center;
+
+    @media (min-width: 700px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    a {
+      color: #4a8fe1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #6cb1ff;
+      }
+    }
+  }
 }

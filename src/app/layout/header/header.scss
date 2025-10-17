@@ -24,6 +24,7 @@
         font-weight: bold;
         margin-right: 20px;
         color: white;
+        z-index: 1;
     }
 
     nav {
@@ -35,6 +36,7 @@
             margin-left: 8px;
             text-decoration: none; // Remove underline from mat-button links
             color: white;
+            z-index: 2;
         }
     }
 }

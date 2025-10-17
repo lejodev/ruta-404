@@ -11,4 +11,11 @@ import { RoutesTimeline } from '../../../routes-timeline/components/routes-timel
 })
 export class Home {
 
+  scrollTo(sectionId: string) {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
 }
