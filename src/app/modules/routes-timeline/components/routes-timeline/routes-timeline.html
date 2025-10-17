@@ -1,36 +1,40 @@
 <div class="timeline-container">
     <h1>Mi Historial de Rutas</h1>
-    <mat-card class="timeline">
 
-        @for (route of routesHistory; track route.id) {
-        <div class="ride">
-            <h2>{{route.name}}</h2>
+    <cdk-virtual-scroll-viewport itemSize="250" class="timeline-viewport">
 
-            <div class="ride-details">
-                <mat-card class="text-details">
-                    <span class="detail-destination">Destino: {{route.destination}}</span>
+        <div class="timeline">
 
-                    <span [class.detail-in-progrss]="route.in_progress">
-                        Estado: {{ route.in_progress ? 'En progreso' : 'Completado' }}
-                    </span>
+            @for (route of routesHistory; track route.id) {
+            <div class="ride">
+                <h2>{{route.name}}</h2>
 
-                    <span class="detail-distance">Distancia: {{route.distance}} km</span>
-                </mat-card>
+                <div class="ride-details">
+                    <mat-card class="text-details">
+                        <span class="detail-destination">Destino: {{route.destination}}</span>
 
-                <mat-card class="gallery">
-                    @for(photo of route.photos; track photo.id){
+                        <span [class.detail-in-progrss]="route.in_progress">
+                            Estado: {{ route.in_progress ? 'En progreso' : 'Completado' }}
+                        </span>
+
+                        <span class="detail-distance">Distancia: {{route.distance}} km</span>
+                    </mat-card>
+
+                    <mat-card class="gallery">
+                        @for(photo of route.photos; track photo.id){
                         <img class="photo" [src]="'/images/' + photo.url" alt="">
-                    }
-                    <!-- Galería: {{route.photos ? route.photos.length + ' Fotos' : 'Sin fotos'}} -->
-                </mat-card>
+                        }
+                    </mat-card>
+                </div>
             </div>
-        </div>
-        }
+            }
 
-        @empty {
-        <mat-card>
-            No hay rutas en este momento.
-        </mat-card>
-        }
-    </mat-card>
+            @empty {
+            <mat-card class="empty-state">
+                No hay rutas en este momento.
+            </mat-card>
+            }
+        </div>
+
+    </cdk-virtual-scroll-viewport>
 </div>

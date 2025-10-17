@@ -37,23 +37,23 @@ export const routes: IRoutesTimeline[] = [
         description: 'Rodada a Armenia Mantequilla,',
         photos: [
             {
-                id: 1,
+                id: 6,
                 url: 'armenia (1).jpg'
             },
             {
-                id: 2,
+                id: 7,
                 url: 'armenia (2).jpg'
             },
             {
-                id: 3,
+                id: 8,
                 url: 'armenia (3).jpg'
             },
             {
-                id: 4,
+                id: 9,
                 url: 'armenia (4).jpg'
             },
             {
-                id: 5,
+                id: 10,
                 url: 'armenia (5).jpg'
             }
         ]
@@ -65,23 +65,23 @@ export const routes: IRoutesTimeline[] = [
         description: 'Rodada grupal a Santa Fe de Antioquia y San Jerónimo, desayuno y buenas charlas',
         photos: [
             {
-                id: 1,
+                id: 11,
                 url: 'sfe-antioquia (1).jpg'
             },
             {
-                id: 2,
+                id: 12,
                 url: 'sfe-antioquia (2).jpg'
             },
             {
-                id: 3,
+                id: 13,
                 url: 'sfe-antioquia (3).jpg'
             },
             {
-                id: 4,
+                id: 14,
                 url: 'sfe-antioquia (4).jpg'
             },
             {
-                id: 5,
+                id: 15,
                 url: 'sfe-antioquia (5).jpg'
             }
         ]
@@ -93,23 +93,23 @@ export const routes: IRoutesTimeline[] = [
         description: 'Rodada con Club Xulszados a Alejandría, Jericó Y remate en Guarne tomando tinto',
         photos: [
             {
-                id: 1,
+                id: 16,
                 url: 'concepcion (1).jpg'
             },
             {
-                id: 2,
+                id: 17,
                 url: 'concepcion (2).jpg'
             },
             {
-                id: 3,
+                id: 18,
                 url: 'concepcion (3).jpg'
             },
             {
-                id: 4,
+                id: 19,
                 url: 'concepcion (4).jpg'
             },
             {
-                id: 5,
+                id: 20,
                 url: 'concepcion (5).jpg'
             }
         ]
@@ -121,24 +121,24 @@ export const routes: IRoutesTimeline[] = [
         description: 'Viaje corto a la Unión, observación de paisajes majestuosos y que no falte el tinto',
         photos: [
             {
-                id: 1,
+                id: 21,
                 url: 'banner.JPG',
                 alt: 'Foto de paisaje en la Union'
             },
             {
-                id: 2,
+                id: 22,
                 url: 'gal- (1).jpg'
             },
             {
-                id: 3,
+                id: 23,
                 url: 'gal- (1).jpg'
             },
             {
-                id: 4,
+                id: 24,
                 url: 'gal- (1).jpg'
             },
             {
-                id: 5,
+                id: 25,
                 url: 'gal- (1).jpg'
             }
         ]
