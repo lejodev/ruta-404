@@ -8,29 +8,30 @@
 .navigation-container {
     // 1. Make the container fill the entire toolbar width
     width: 100%;
-    
+
     // 2. Enable Flexbox
     display: flex;
-    
+
     // 3. Align items vertically in the center
     align-items: center;
-    
+
     // 4. KEY: Push the logo (first item) and the nav (second item) to the ends
     justify-content: space-between;
 
     .logo {
-        // Basic styling for the logo/title
-        font-size: 1.25rem;
-        font-weight: bold;
-        margin-right: 20px;
-        color: white;
-        z-index: 1;
+        background: url('/images/logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 5rem;
+        cursor: pointer;
+        z-index: 20;
     }
 
     nav {
         // Ensure the navigation group itself is horizontally aligned
         display: flex;
-        
+
         a {
             // Target the Angular Material buttons for spacing
             margin-left: 8px;
