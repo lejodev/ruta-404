@@ -5,6 +5,7 @@ import { SHARED_MATERIAL_IMPORTS } from '../../../../shared/material/material.im
 import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-routes-timeline',
   imports: [SHARED_MATERIAL_IMPORTS, CommonModule],
   templateUrl: './routes-timeline.html',
