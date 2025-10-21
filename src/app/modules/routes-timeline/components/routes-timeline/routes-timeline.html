@@ -20,11 +20,23 @@
                         <span class="detail-distance">Distancia: {{route.distance}} km</span>
                     </mat-card>
 
-                    <mat-card class="gallery">
-                        @for(photo of route.photos; track photo.id){
-                        <img class="photo" [src]="'/images/' + photo.url" alt="">
-                        }
-                    </mat-card>
+                    <!-- <mat-accordion class="gallery-accordion">
+                        <mat-expansion-panel class="gallery-expansion-panel" [expanded]="isRouteOpen(route.id)"
+                            (opened)="toggleGallery(route.id)" (closed)="toggleGallery(route.id)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="gallery-panel-title">
+                                    Ver Galería ({{route.photos?.length || 0}} fotos)
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <div class="gallery-content">
+                                @for(photo of route.photos; track photo.id){
+                                <img class="photo" [src]="'/images/' + photo.url" alt="" loading="lazy" width="200"
+                                    height="150">
+                                }
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion> -->
                 </div>
             </div>
             }

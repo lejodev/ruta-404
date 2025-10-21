@@ -14,14 +14,25 @@ import { CommonModule } from '@angular/common';
 export class RoutesTimeline implements OnInit {
 
   routesHistory!: IRoutesTimeline[];
+  
+  public currentOpenRouteId: number | null = null; 
 
   constructor(private rideHistoryService: RoutesTimelineService) { }
 
   ngOnInit(): void {
-    this.routesHistory = this.rideHistoryService.getRideHistory()
+    this.routesHistory = this.rideHistoryService.getRideHistory();
     console.log(this.routesHistory);
-
   }
 
+  toggleGallery(routeId: number): void {
+    if (this.currentOpenRouteId === routeId) {
+      this.currentOpenRouteId = null;
+    } else {
+      this.currentOpenRouteId = routeId;
+    }
+  }
 
+  isRouteOpen(routeId: number): boolean {
+    return this.currentOpenRouteId === routeId;
+  }
 }

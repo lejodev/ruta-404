@@ -6,6 +6,7 @@ $text-color-highlight: #FFC107;
 $background-gradient-start: rgb(0, 12, 26);
 $background-gradient-end: rgb(0, 11, 24);
 $card-background: rgba(255, 255, 255, 0.05);
+$card-border-color: rgba(255, 255, 255, 0.1);
 
 .timeline-container {
     display: flex;
@@ -19,7 +20,7 @@ $card-background: rgba(255, 255, 255, 0.05);
 }
 
 .timeline-viewport {
-    height: 250vh;
+    height: 190vh;
     max-width: 800px;
     width: 100%;
 }
@@ -60,6 +61,7 @@ $card-background: rgba(255, 255, 255, 0.05);
         border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
         z-index: 2;
         box-sizing: border-box;
+
         &:last-child {
             border-bottom: none;
         }
@@ -97,6 +99,7 @@ $card-background: rgba(255, 255, 255, 0.05);
                 display: flex;
                 flex-direction: column;
                 box-shadow: none;
+                border: 1px solid $card-border-color;
 
                 span {
                     padding: 0.25rem 0;
@@ -118,26 +121,73 @@ $card-background: rgba(255, 255, 255, 0.05);
                 }
             }
 
-            .gallery {
-                background-color: transparent;
-                border-radius: 6px;
-                display: flex;
-                flex-flow: row;
-                height: 30vh;
-                gap: 0.5rem;
-                padding: 0;
-                box-shadow: none;
+            .gallery-accordion {
+                width: 100%;
 
-                .photo {
-                    height: 100%;
-                    width: 10%;
-                    object-fit: cover;
+                .gallery-expansion-panel {
+                    background-color: $card-background;
                     border-radius: 6px;
-                    transition: all ease-in-out 0.3s;
-                    cursor: pointer;
+                    border: 1px solid $card-border-color;
+                    box-shadow: none;
+                    color: $text-color-primary;
 
-                    &:hover {
-                        width: 30%;
+                    .mat-expansion-panel-header {
+                        padding: 0 1rem;
+                        height: 48px;
+
+                        .gallery-panel-title {
+                            color: $text-color-secondary;
+                            font-weight: bold;
+                        }
+
+                        .mat-expansion-indicator::after {
+                            color: $text-color-secondary;
+                        }
+                    }
+
+                    .mat-expansion-panel-content {
+                        .mat-expansion-panel-body {
+                            padding: 0.5rem 1rem 1rem;
+                        }
+                    }
+
+                    .gallery-content {
+                        display: flex;
+                        flex-flow: row;
+                        justify-content: space-around;
+                        height: 30vh;
+                        gap: 0.5rem;
+                        padding: 0;
+                        overflow-x: auto;
+                        -webkit-overflow-scrolling: touch;
+
+                        &::-webkit-scrollbar {
+                            height: 6px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: rgba(255, 255, 255, 0.2);
+                            border-radius: 3px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+
+
+                        .photo {
+                            height: 100%;
+                            width: 15%;
+                            flex-shrink: 0;
+                            object-fit: cover;
+                            border-radius: 6px;
+                            transition: all ease-in-out 0.3s;
+                            cursor: pointer;
+
+                            &:hover {
+                                width: 30%;
+                            }
+                        }
                     }
                 }
             }
@@ -156,6 +206,7 @@ $card-background: rgba(255, 255, 255, 0.05);
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid $card-border-color;
 }
 
 @media (min-width: 600px) {
@@ -171,7 +222,7 @@ $card-background: rgba(255, 255, 255, 0.05);
                     width: 30%;
                 }
 
-                .gallery {
+                .gallery-accordion {
                     width: 60%;
                 }
             }

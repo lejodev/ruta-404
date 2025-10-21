@@ -11,7 +11,7 @@
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../../../../../../public/images/banner.JPG');
+        url('../../../../../../public/images/banner.webp');
 
     background-position: center;
     background-repeat: no-repeat;
@@ -81,101 +81,78 @@
 }
 
 .about {
-    // 1. IMPROVEMENT: Use CSS variables (optional, but good practice for colors)
-    // Assuming dark primary and secondary colors
-    --color-primary-dark: #012; 
+    --color-primary-dark: #012;
     --color-secondary-dark: rgb(0, 14, 29);
     --spacing-lg: 2.5rem;
     --spacing-md: 1rem;
 
     display: flex;
-    // 2. CLARITY: Using variables for background
     background: linear-gradient(var(--color-primary-dark), var(--color-secondary-dark));
     padding: var(--spacing-lg);
-    
-    // Default (Mobile-first: Column layout)
+
     .about-card {
         display: flex;
-        flex-flow: column; 
+        flex-flow: column;
         padding: var(--spacing-md);
-        gap: var(--spacing-md);
-        width: 100%; // Ensure it takes full width for mobile view
-        max-width: 1200px; // Add a max-width to center content nicely
+        max-width: 1200px;
         margin: 0 auto;
-        
-        // 3. SIMPLIFICATION: Remove redundant padding/gap/display from .text-card
+
         .text-card {
             padding: var(--spacing-md);
-            // NOTE: The 'gap: 1rem;' here will have no effect unless .text-card is a flex container.
-            // If it's meant to be a flex container, add display: flex; flex-direction: column;
-            // Otherwise, rely on margins/paddings for spacing within text elements.
 
-            // 4. SIMPLIFICATION: Reduce deep nesting
             .about-me-paragraph {
-                
-                // Directly target paragraphs without intermediate nesting if possible, 
-                // but kept here to respect original intent.
+
                 p {
                     padding-bottom: var(--spacing-md);
-                    // NOTE: 4rem margin is very large and might create layout issues.
-                    // Consider reducing this value significantly.
-                    margin: 2rem 0; 
+                    margin: 2rem 0;
                 }
 
                 .text-sm {
                     font-weight: bold;
-                    // Add color for emphasis, example:
-                    color: gold; 
+                    color: gold;
                 }
             }
         }
-        
+
         .images-container {
-            // NOTE: flex: 2 on a column layout makes the image take more vertical space 
-            // than text. This is fine, but verify this is the desired ratio.
-            flex: 2; 
+            flex: 2;
             min-height: 250px;
             overflow: hidden;
 
             .image {
                 height: 100%;
                 width: 100%;
-                
-                // 5. IMPROVEMENT: Use background shorthand for simplicity
-                background: url('../../../../../../public/images/crsl-1-lake.jpg') center / cover no-repeat;
-                overflow: hidden; // Redundant if parent is already hidden, but harmless.
+                background: url('../../../../../../public/images/crsl-1-lake.webp') center / cover no-repeat;
+                overflow: hidden;
 
                 &:hover {
-                    // 6. CLARITY: Add transition duration for smooth effect
                     transition: transform 0.4s ease-out;
-                    transform: scale(1.05); // Increased scale for more noticeable effect
+                    transform: scale(1.05);
                 }
             }
         }
     }
 
-    // Desktop/Tablet Layout: @media (min-width: 768px)
     @media (min-width: 768px) {
-        
+
         .about-card {
-            flex-flow: row; // Switch to horizontal layout
-            align-items: center; // Vertically center the text and image containers
+            flex-flow: row;
+            align-items: center;
         }
 
         .text-card {
-            // 7. CLARITY: If using 'justify-content: center', it needs display: flex
             display: flex;
             flex-direction: column;
-            
-            width: 50%; 
-            justify-content: center; // Vertically centers content within the card
+
+            width: 50%;
+            justify-content: center;
         }
 
         .images-container {
-            flex: 1; // Change flex to 1 for 1:1 ratio if text-card is 50% width
+            flex: 1;
             width: 50%;
             height: 55vh;
-            min-height: auto; // Reset min-height to allow vh to control size
+            min-height: auto;
         }
     }
 }
@@ -249,7 +226,7 @@
             flex: 2;
             min-height: 250px;
             border-radius: 8px;
-            background-image: url('../../../../../../public/images/gal-\ \(2\).jpg');
+            background-image: url('../../../../../../public/images/gal-\ \(2\).webp');
             background-size: cover;
             background-position: center;
         }
@@ -262,6 +239,7 @@
 
             flex-direction: row;
             padding: 1.5rem;
+
             .social-content {
                 width: 50%;
             }
